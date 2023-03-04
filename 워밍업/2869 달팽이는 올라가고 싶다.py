@@ -1,4 +1,10 @@
 import sys
 
 a,b,v = list(map(int, sys.stdin.readline().split()))
-print(v-a+1)
+
+k=(v-b)/(a-b)
+
+if k==int(k):
+    print(int(k))
+else:
+    print(int(k)+1)
