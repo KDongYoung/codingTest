@@ -1,4 +1,14 @@
-a=5
-b=3
+sug=int(input())
+bag=0
 
-num=int(input())
+while sug >=0:
+    if sug%5==0: # sug=0 되면 알아서 break
+        bag+=sug//5
+        print(bag)
+        break
+    else:
+        sug-=3
+        bag+=1  
+    
+else: 
+    print(-1)
