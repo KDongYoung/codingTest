@@ -10,19 +10,35 @@ NGE(1) = 5, NGE(2) = 7, NGE(3) = 7, NGE(4) = -1이다. A = [9, 5, 4, 8]인 경�
 
 import sys
 
-a=int(sys.stdin.readline())
+n=int(sys.stdin.readline())
 arr=list(map(int,sys.stdin.readline().split()))
-stack=[arr[0]]
+stack=[]
+ans=[-1 for _ in range(n)]
 
 for i in range(len(arr)):
-    
-    for j in range(i+1,len(arr)-i):
-        if stack[-1]<arr[j]:
-            stack.pop()
-            stack.append(arr[j])
-            break
-        else:
-            stack.append(arr[i])            
-    print(stack)
+    while stack and arr[stack[-1]]<arr[i]:
+        ans[stack.pop()]=arr[i]
+    stack.append(i) # 값이 아닌 index를 append하기
 
-print(stack)
+print(" ".join(map(str,ans)))
+
+# 시간 초과
+# for i in range(len(arr)):
+#     stack.append(arr[i]) 
+    
+#     if i==len(arr)-1:
+#         stack.pop()
+#         stack.append(-1)
+#         break
+    
+#     for j in range(i+1,len(arr)):
+#         if stack[-1]<arr[j]:
+#             stack.pop()
+#             stack.append(arr[j])
+#             break
+        
+#         if j==len(arr)-1:
+#             stack.pop()
+#             stack.append(-1)            
+
+# print(" ".join(map(str,stack)))
