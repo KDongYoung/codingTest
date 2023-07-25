@@ -32,7 +32,6 @@ for i in range(n):
 for b in height:
     while stack:
         if stack[-1]<=b:
-            # 현재 탐색하고 있는 빌딩의 높이가 TOP보다 작아질때까지 Stack TOP 제거
             stack.pop()
         else:
             ans+=len(stack)
