@@ -11,7 +11,7 @@
 ## -> DFS
 
 import sys
-sys.setrecursionlimit(10000) # 입력, 재귀를 위해 항상 필요한 루틴 (시간제한 1초)
+sys.setrecursionlimit(10000) # 입력, 재귀 문제에서는 항상 작성 (시간제한 1초)
 
 def dfs(x,y):
         dx=[1,-1,0,0]
