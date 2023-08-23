@@ -33,7 +33,6 @@ while queue:
 
 ## dfs 뒤에서
 visit_dfs=[]
-stack=[v]
 
 def dfs(v):
     visit_dfs.append(v)    
