@@ -9,7 +9,7 @@
 며칠이 지나면 토마토들이 모두 익는지, 그 최소 일수를 구하는 프로그램을 작성하라.
 단, 상자의 일부 칸에는 토마토가 들어있지 않을 수도 있다.
 '''
-# DFS
+# BFS
 
 import sys
 from collections import deque
@@ -21,6 +21,7 @@ m,n=list(map(int, input().rstrip().split()))
 graph=[list(map(int, input().rstrip().split())) for _ in range(n)]
 q=deque()
 
+# 익은 토마토 찾기
 for i in range(n):
     for j in range(m):
         if graph[i][j]==1:
@@ -39,7 +40,8 @@ while q:
         if (0<=nx<n) and (0<=ny<m) and graph[nx][ny]==0:
             graph[nx][ny] = graph[x][y]+1
             q.append((nx,ny))
-    
+
+# 토마토가 모두 익지는 못하는 상황
 flag=False
 for i in graph:
     if 0 in i:
