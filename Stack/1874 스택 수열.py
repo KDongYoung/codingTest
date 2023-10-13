@@ -17,7 +17,7 @@ for _ in range(n):
     num=int(sys.stdin.readline())
     
     while current<=num:
-        arr.append(num)
+        arr.append(current)
         ans.append("+")
         current+=1
     
